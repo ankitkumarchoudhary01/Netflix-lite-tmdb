@@ -5,7 +5,7 @@ function Header() {
 
   return (
     <header className="border-b border-zinc-800 bg-black fixed top-0 z-50 w-full">
-      <div className="mx-auto flex max-w-[1600px] flex-col gap-5 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div className="mx-auto flex max-w-[1600px] flex-col gap-5 px-4 py-5  lg:flex-row lg:items-center lg:justify-between sm:flex-row sm:items-center sm:justify-between ">
         
         <div>
             <span className="text-2xl  tracking-tight text-red-500">Netflix Lite</span>
@@ -21,7 +21,7 @@ function Header() {
 
         <button
           type="button"
-          className="hidden rounded-xl border border-zinc-700 px-4 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white lg:block"
+          className=" rounded-xl border border-zinc-700 px-4 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-500 hover:text-white lg:block"
         >
           Favorites
         </button>

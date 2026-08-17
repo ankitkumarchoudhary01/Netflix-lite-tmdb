@@ -1,28 +1,37 @@
-function MovieCard({ movie }) {
-    const imageBaseUrl = import.meta.env.VITE_TMDB_IMAGE_BASE_URL;
-
+function MovieCard({
+    movie,
+    onToggleFavorite,
+    isFavorite,
+}) {
     return (
-        <article className="group overflow-hidden rounded-xl bg-zinc-900 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
-            <div className="relative aspect-[2/3] overflow-hidden bg-zinc-800">
-                {movie.poster_path ? (
-                    <img
-                        src={`${imageBaseUrl}${movie.poster_path}`}
-                        alt={movie.title}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                ) : (
-                    <div className="flex h-full items-center justify-center text-sm text-zinc-500">
-                        No poster available
-                    </div>
-                )}
+        <article className="group relative overflow-hidden rounded-xl bg-zinc-900">
 
-                <div className="absolute right-3 top-3 rounded-lg bg-black/75 px-2.5 py-1 text-sm font-semibold text-white backdrop-blur-sm">
-                    ★ {movie.vote_average.toFixed(1)}
-                </div>
+            <div className="relative aspect-[2/3] overflow-hidden">
+
+                <img
+                    src={`${import.meta.env.VITE_TMDB_IMAGE_BASE_URL}${movie.poster_path}`}
+                    alt={movie.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                />
+
+                <button
+                    type="button"
+                    onClick={() => onToggleFavorite(movie)}
+                    aria-label={
+                        isFavorite
+                            ? `Remove ${movie.title} from favorites`
+                            : `Add ${movie.title} to favorites`
+                    }
+                    className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-2xl backdrop-blur-sm transition hover:scale-110"
+                >
+                    {isFavorite ? "♥" : "♡"}
+                </button>
+
             </div>
 
             <div className="p-4">
-                <h2 className="truncate text-base font-semibold text-white">
+                <h2 className="truncate text-lg font-semibold">
                     {movie.title}
                 </h2>
 
@@ -33,9 +42,12 @@ function MovieCard({ movie }) {
                             : "N/A"}
                     </span>
 
-                    <span>Movie</span>
+                    <span>
+                        Rating: {movie.vote_average.toFixed(1)}
+                    </span>
                 </div>
             </div>
+
         </article>
     );
 }

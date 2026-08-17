@@ -33,12 +33,12 @@ function SearchBar({query, setQuery, handleSearch}) {
         />
       </div>
 
-      <button
+      {/* <button
         type="submit"
         className="rounded-xl bg-zinc-200 px-5 py-3 text-sm font-semibold text-black transition hover:bg-white"
       >
         Search
-      </button>
+      </button> */}
     </form>
   );
 }
