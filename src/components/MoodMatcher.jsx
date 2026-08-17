@@ -44,7 +44,7 @@ function MoodMatcher({ onMovieFound }) {
                             handleMoodSearch();
                         }
                     }}
-                    placeholder="Describe your mood like something funny and relaxing"
+                    placeholder="Describe your mood"
                     className="min-w-0 flex-1 bg-transparent px-4 py-3 text-white outline-none placeholder:text-zinc-600"
                 />
 

@@ -156,7 +156,7 @@ export default function SearchPage() {
                 {/* Back Button + Search */}
                 <div className="flex w-full max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                     <button
-                        className="w-full shrink-0 rounded-lg border border-zinc-700 px-3 py-3 text-sm transition hover:bg-zinc-900 sm:w-auto"
+                        className="w-full rounded-lg border border-zinc-700 px-3 py-3 text-sm transition hover:bg-zinc-900 sm:w-auto"
                         type="button"
                         onClick={() => navigate("/")}
                     >
